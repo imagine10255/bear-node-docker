@@ -1,0 +1,104 @@
+{
+  "name": "bear-deploy",
+  "version": "0.0.5",
+  "description": "Common tools and methods for project development",
+  "keywords": [
+    "typescript",
+    "javscript",
+    "utils"
+  ],
+  "author": "imagine10255",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imagine10255/bear-deploy.git"
+  },
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "bin": "bin/cli.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "run-s build:claer && run-s build:babel && run-s build:self",
+    "build:babel": "microbundle --target=node --format cjs src/index.js",
+    "build:self": "microbundle --target=node --format cjs src/index.js",
+    "build:claer": "rm -rf ./dist",
+    "prepublishOnly": "run-s build",
+    "prepare:babel": "babel src/*.ts -d dist && npm t",
+    "test": "jest --coverage",
+    "gitlog": "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'",
+    "lint:fix": "eslint ./src/*.ts --fix",
+    "cz": "git cz",
+    "release-cli": "standard-version --packageFiles ./packages/package.json --bumpFiles ./packages/package.json",
+    "release": "yarn release-cli --release-as",
+    "release:major": "yarn release-cli -r major && run-s postrelease",
+    "release:minor": "yarn release-cli -r minor && run-s postrelease",
+    "release:patch": "yarn release-cli -r patch && run-s postrelease",
+    "release:alpha": "yarn release-cli --prerelease alpha && run-s postrelease",
+    "postrelease": "# then run `git push --follow-tags origin main && yarn build && npm publish ./packages` to publish"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.13",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^7.0.2",
+    "cz-conventional-changelog": "3.3.0",
+    "cz-customizable": "6.3.0",
+    "deep-equal": "^2.0.5",
+    "eslint": "^8.8.0",
+    "jest": "^27.4.7",
+    "microbundle": "0.14.2",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5",
+    "standard-version": "9.3.0",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "typescript": "4.1.5",
+    "ora": "5.4.0"
+  },
+  "eslintConfig": {
+    "parser":  "@typescript-eslint/parser",
+    "extends": ["plugin:@typescript-eslint/recommended"],
+    "plugins": ["@typescript-eslint"],
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "rules": {
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "indent": [
+        "warn",
+        4
+      ],
+      "object-curly-spacing": [
+        "warn",
+        "never"
+      ],
+      "no-useless-escape": "off",
+      "import/no-anonymous-default-export": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "no-mixed-operators": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
+  }
+}
