@@ -1,7 +1,8 @@
 {
   "name": "bear-deploy",
-  "version": "0.0.5",
+  "version": "0.0.17",
   "description": "Common tools and methods for project development",
+  "dockerRegistry": "docker.bearests.com:8443",
   "keywords": [
     "typescript",
     "javscript",
@@ -13,28 +14,22 @@
     "type": "git",
     "url": "https://github.com/imagine10255/bear-deploy.git"
   },
-  "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "types": "dist/index.d.ts",
+  "bin": "bin/cli.js",
   "files": [
     "dist",
-    "bin"
+    "bin",
+    "config"
   ],
-  "bin": "bin/cli.js",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "run-s build:claer && run-s build:babel && run-s build:self",
-    "build:babel": "microbundle --target=node --format cjs src/index.js",
-    "build:self": "microbundle --target=node --format cjs src/index.js",
+    "build": "run-s build:claer && tsc --project ./tsconfig.build.json",
     "build:claer": "rm -rf ./dist",
     "prepublishOnly": "run-s build",
-    "prepare:babel": "babel src/*.ts -d dist && npm t",
     "test": "jest --coverage",
     "gitlog": "git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblueby %an %Cgreen(%cr)%Creset'",
-    "lint:fix": "eslint ./src/*.ts --fix",
+    "lint:fix": "eslint ./lib/*.ts --fix",
     "cz": "git cz",
     "release-cli": "standard-version --packageFiles ./packages/package.json --bumpFiles ./packages/package.json",
     "release": "yarn release-cli --release-as",

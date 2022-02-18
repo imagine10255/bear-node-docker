@@ -1,14 +1,9 @@
-import {bash} from './script/utils';
-// import * as pkgConfig from '../../../package.json';
 import * as child_process from 'child_process';
-
-import ora from 'ora';
 import chalk from 'chalk';
-import logger from './script/logger';
+import ora from 'ora';
+import {bash} from './script/utils';
 import {CLIError} from './script/cli';
-// import {ESiteEnv} from '../../../src/config/types';
-// import {routePrefixPath} from '../../../src/config/app';
-// const { Select } = require('enquirer');
+import logger from './script/logger';
 
 
 /**
@@ -22,8 +17,6 @@ function renameDockerImage(imageName: string, version: string, remoteAddress: st
 }
 
 function buildDockerImage(imageName: string, version: string, remoteAddress: string): Promise<string> {
-
-    // bash(`docker build -t ${imageName} .`);
 
     return new Promise((resolve, reject) => {
         const dockerBuildArgs = ['build', '-t', imageName, '--build-arg', `PUBLIC_URL=`, '.'];
@@ -87,20 +80,11 @@ function buildDockerImage(imageName: string, version: string, remoteAddress: str
 
 
 new Promise(async () => {
-
-    // 不使用多版本發佈
-    // const siteEnv = ESiteEnv.prod;
-
-    // ===========參數===============
-    // const imageName = pkgConfig.name;
-    // const imageVersion = pkgConfig.version;
-    // const remoteAddress = pkgConfig.dockerRegistry;
-    const imageName = 'bear-example';
-    const imageVersion = '1.2.3';
-    const remoteAddress = 'docker.bear.com:8443';
+    const imageName = process.env.npm_package_name ?? 'bear-example';
+    const imageVersion = process.env.npm_package_version ?? '0.0.0';
+    const remoteAddress = process.env.npm_package_dockerRegistry ?? 'docker.bearests.com:8443';
 
     console.log(`準備發布 ${imageName}:${imageVersion} ...`);
-
 
     // Build Image
     const targetImageName = await buildDockerImage(imageName, imageVersion, remoteAddress);
@@ -115,7 +99,4 @@ new Promise(async () => {
 
     // By OSX Notice
     bash(`osascript -e 'display notification "${targetImageName} 發布完成" with title "完成發布"'`);
-
-
-
 });
