@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/imagine10255/bear-deploy/compare/v2.0.0...v0.0.18) (2022-02-18)
+
+
+### Bug Fixes
+
+* 修正 package.json script ([d1de109](https://github.com/imagine10255/bear-deploy/commit/d1de109775796dd0779b7561c7c491529a95a2d3))
+
 ## [2.0.0](https://github.com/imagine10255/bear-deploy/compare/v1.0.2...v2.0.0) (2022-02-18)
 
 ### [1.0.2](https://github.com/imagine10255/bear-deploy/compare/v1.0.1...v1.0.2) (2022-02-18)

@@ -1,6 +1,6 @@
 {
   "name": "bear-deploy",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Common tools and methods for project development",
   "dockerRegistry": "docker.bearests.com:8443",
   "keywords": [
@@ -60,9 +60,13 @@
     "ora": "5.4.0"
   },
   "eslintConfig": {
-    "parser":  "@typescript-eslint/parser",
-    "extends": ["plugin:@typescript-eslint/recommended"],
-    "plugins": ["@typescript-eslint"],
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
     "parserOptions": {
       "ecmaVersion": 7,
       "sourceType": "module"
