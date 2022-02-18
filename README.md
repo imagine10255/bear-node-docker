@@ -9,16 +9,19 @@
 ## Install
 
 ```bash
-yarn add bear-deploy
+yarn add -D bear-deploy
 ```
 
-## Usage
+## Setting
 
+in your package.json
 ```tsx
-import {number} from 'bear-deploy/format'
-import {formatCurrency} from 'bear-deploy/number'
-
+"scripts": {
+    "release:docker": "NODE_ENV=production yarn bear-deploy"
+},
 ```
+
+create Dockerfile in your root dir
 
 ## License
 
