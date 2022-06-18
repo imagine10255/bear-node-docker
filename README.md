@@ -16,9 +16,11 @@ yarn add -D bear-deploy
 
 in your package.json
 ```tsx
+"dockerRegistry": "docker.bearests.com:8443",
 "scripts": {
     "release:docker": "NODE_ENV=production yarn bear-deploy"
 },
+
 ```
 
 create Dockerfile in your root dir

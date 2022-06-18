@@ -5,6 +5,22 @@ import {bash} from './script/utils';
 import {CLIError} from './script/cli';
 import logger from './script/logger';
 
+interface IArgs {
+    publicUrl: string
+    dockerfile: string
+}
+
+const args: IArgs = process.argv
+    .slice(2)
+    .map(arg => arg.split('='))
+    .reduce((currArgs, [value, key]) => {
+        // @ts-ignore
+        currArgs[value.replace('--', '')] = key;
+        return currArgs;
+    }, {
+        publicUrl: '/',
+        dockerfile: './node_modules/bear-deploy/config/Dockerfile',
+    });
 
 /**
  * 重新命名 Docker Image
@@ -16,10 +32,10 @@ function renameDockerImage(imageName: string, version: string, remoteAddress: st
     return `${remoteAddress}/${imageName}:${version}`;
 }
 
-function buildDockerImage(imageName: string, version: string, remoteAddress: string): Promise<string> {
+function buildDockerImage(imageName: string, version: string, remoteAddress: string, publicUrl: string, dockerfile: string): Promise<string> {
 
     return new Promise((resolve, reject) => {
-        const dockerBuildArgs = ['build', '-t', imageName, '--build-arg', `PUBLIC_URL=`, '.'];
+        const dockerBuildArgs = ['build', '-t', imageName, '-f', dockerfile, '--build-arg', `PUBLIC_URL=${publicUrl}`, '.'];
 
         const loader = ora();
         logger.info(
@@ -84,10 +100,10 @@ new Promise(async () => {
     const imageVersion = process.env.npm_package_version ?? '0.0.0';
     const remoteAddress = process.env.npm_package_dockerRegistry ?? 'docker.bearests.com:8443';
 
-    console.log(`準備發布 ${imageName}:${imageVersion} ...`);
+    console.log(`ready release ${imageName}:${imageVersion} ...`);
 
     // Build Image
-    const targetImageName = await buildDockerImage(imageName, imageVersion, remoteAddress);
+    const targetImageName = await buildDockerImage(imageName, imageVersion, remoteAddress, args.publicUrl, args.dockerfile);
 
     // Push Image
     bash(`docker push ${targetImageName}`);
