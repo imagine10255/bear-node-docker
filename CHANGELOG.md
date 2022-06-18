@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0-alpha.0](https://github.com/imagine10255/bear-deploy/compare/v1.0.4-alpha.3...v1.1.0-alpha.0) (2022-06-18)
+
+
+### Features
+
+* add args ([f719614](https://github.com/imagine10255/bear-deploy/commit/f71961411c09b3020b25cf76d87d00a11f09fe7e))
+
 ### [1.0.4-alpha.3](https://github.com/imagine10255/bear-deploy/compare/v1.0.4-alpha.2...v1.0.4-alpha.3) (2022-06-18)
 
 ### [1.0.4-alpha.2](https://github.com/imagine10255/bear-deploy/compare/v1.0.4-alpha.1...v1.0.4-alpha.2) (2022-06-18)
