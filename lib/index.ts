@@ -19,11 +19,16 @@ module.exports = async function bearScript () {
             run(argv);
         })
 
-        .command('svg-symbols <path> [idPrefix]', 'svg merge symbols', (yargs) => {
+        // ====================================
+        .command('svg-symbols [path] [idPrefix]', 'svg merge symbols', (yargs) => {
             return yargs
                 .positional('path', {
-                    describe: 'svg-path',
-                    default: '/',
+                    describe: 'svg source path',
+                    default: './public/static/plugins/iconsvg/_sources',
+                })
+                .positional('idPrefix', {
+                    describe: 'id prefix name (ex: icon -> icon-arrow-right)',
+                    default: 'icon',
                 });
         }, (argv) => {
             const run = require('./svg-symbols');
