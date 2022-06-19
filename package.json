@@ -39,7 +39,8 @@
   },
   "dependencies": {
     "ora": "5.4.0",
-    "yargs": "17.5.1"
+    "yargs": "17.5.1",
+    "svg-parser": "^2.0.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -49,6 +50,8 @@
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "@types/yargs": "17.0.10",
+    "@types/cheerio": "^0.22.31",
+    "@types/svg-parser": "^2.0.3",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "cz-conventional-changelog": "3.3.0",

@@ -8,7 +8,7 @@ module.exports = async function bearScript () {
             return yargs
                 .positional('publicUrl', {
                     describe: 'react-script build public url (ex: /recommend)',
-                    default: '/'
+                    default: '/',
                 })
                 .positional('dockerfile', {
                     describe: 'custom dockerfile path (ex: ./)',
@@ -16,6 +16,17 @@ module.exports = async function bearScript () {
                 });
         }, (argv) => {
             const run = require('./build-docker');
+            run(argv);
+        })
+
+        .command('svg-symbols <path> [idPrefix]', 'svg merge symbols', (yargs) => {
+            return yargs
+                .positional('path', {
+                    describe: 'svg-path',
+                    default: '/',
+                });
+        }, (argv) => {
+            const run = require('./svg-symbols');
             run(argv);
         })
         .demandCommand(1)

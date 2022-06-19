@@ -103,7 +103,7 @@ async function run(args: IArgs) {
     logger.info(`remove image ${imageName}`);
 
     // By OSX Notice
-    bash(`osascript -e 'display notification "${targetImageName} 發布完成" with title "完成發布"'`);
+    bash(`osascript -e 'display notification "${targetImageName} done" with title "publish done"'`);
 }
 
 export default run;
