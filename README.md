@@ -15,7 +15,7 @@ yarn add -D bear-script
 ## Document
 
 - [bear-script docker](./docs/docker.md)
-- [bear-script svg-symbole](./docs/docker.md)
+- [bear-script svg-symbole](./docs/svg-symbole.md)
 
 ## License
 
