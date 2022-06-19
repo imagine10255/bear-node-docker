@@ -12,40 +12,10 @@
 yarn add -D bear-script
 ```
 
-## Setting
+## Document
 
-```bash
-$ cp ./node_modules/bear-script/config/nginx ./deploy/nginx
-```
-
-in your package.json
-```json
-{
-  "dockerRegistry": "docker.bearests.com:8443",
-  "scripts": {
-    "build": "react-scripts build",
-    "publish": "yarn bear-script docker --publicUrl=/recommend --dockerfile=./node_modules/bear-script/config/Dockerfile"
-  }
-}
-```
-
-### Options Custom dockerfile
-```bash
-$ cp ./node_modules/bear-script/config/Dockerfile ./ 
-```
-
-package.json
-```json
-{
-  "dockerRegistry": "docker.bearests.com:8443",
-  "scripts": {
-    "build": "react-scripts build",
-    "publish": "yarn bear-script docker --publicUrl=/recommend"
-  }
-}
-```
-
-
+- [bear-script docker](./docs/docker.md)
+- [bear-script svg-symbole](./docs/docker.md)
 
 ## License
 
