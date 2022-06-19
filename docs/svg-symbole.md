@@ -16,7 +16,7 @@ in tsconfig.json
 ```
 
 in react component
-```react
+```typescript jsx
 import styled, {css, keyframes} from 'styled-components/macro';
 import {asset} from 'utils/config';
 
