@@ -107,3 +107,4 @@ async function run(args: IArgs) {
 }
 
 export default run;
+module.exports = run;

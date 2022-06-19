@@ -1,21 +1,21 @@
-# bear-deploy
+# bear-script
 
 > Common tools and methods for project development
 
-[![NPM](https://img.shields.io/npm/v/bear-deploy.svg)](https://www.npmjs.com/package/bear-deploy)
-[![npm](https://img.shields.io/npm/dm/bear-deploy.svg)](https://www.npmjs.com/package/bear-deploy)
+[![NPM](https://img.shields.io/npm/v/bear-script.svg)](https://www.npmjs.com/package/bear-script)
+[![npm](https://img.shields.io/npm/dm/bear-script.svg)](https://www.npmjs.com/package/bear-script)
 
 
 ## Install
 
 ```bash
-yarn add -D bear-deploy
+yarn add -D bear-script
 ```
 
 ## Setting
 
 ```bash
-$ cp ./node_modules/bear-deploy/config/nginx ./deploy/nginx
+$ cp ./node_modules/bear-script/config/nginx ./deploy/nginx
 ```
 
 in your package.json
@@ -24,14 +24,14 @@ in your package.json
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
     "build": "react-scripts build",
-    "build:docker": "NODE_ENV=production yarn bear-deploy --publicUrl=/recommend --dockerfile=./node_modules/bear-deploy/config/Dockerfile"
+    "publish": "yarn bear-script docker --publicUrl=/recommend --dockerfile=./node_modules/bear-script/config/Dockerfile"
   }
 }
 ```
 
 ### Options Custom dockerfile
 ```bash
-$ cp ./node_modules/bear-deploy/config/Dockerfile ./ 
+$ cp ./node_modules/bear-script/config/Dockerfile ./ 
 ```
 
 package.json
@@ -40,7 +40,7 @@ package.json
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
     "build": "react-scripts build",
-    "build:docker": "NODE_ENV=production yarn bear-deploy --publicUrl=/recommend"
+    "publish": "yarn bear-script docker --publicUrl=/recommend"
   }
 }
 ```
