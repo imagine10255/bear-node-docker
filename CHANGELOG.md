@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-alpha.0](https://github.com/imagine10255/bear-script/compare/v2.0.1...v2.1.0-alpha.0) (2022-06-19)
+
+
+### Features
+
+* add svg command ([3330860](https://github.com/imagine10255/bear-script/commit/33308603f886f0df1a16d4411055ed2e362df724))
+
 ### [2.0.1](https://github.com/imagine10255/bear-script/compare/v1.1.0-alpha.1...v2.0.1) (2022-06-19)
 
 
