@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0-alpha.1](https://github.com/imagine10255/bear-script/compare/v2.1.0-alpha.0...v2.1.0-alpha.1) (2022-06-19)
+
+
+### Bug Fixes
+
+* fix args command and docs ([37d6e63](https://github.com/imagine10255/bear-script/commit/37d6e63cbf8594c1255c56918cad6ea6348841bd))
+
 ## [2.1.0-alpha.0](https://github.com/imagine10255/bear-script/compare/v2.0.1...v2.1.0-alpha.0) (2022-06-19)
 
 
