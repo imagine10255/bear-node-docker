@@ -14,16 +14,38 @@ yarn add -D bear-deploy
 
 ## Setting
 
-in your package.json
-```tsx
-"dockerRegistry": "docker.bearests.com:8443",
-"scripts": {
-    "release:docker": "NODE_ENV=production yarn bear-deploy"
-},
-
+```bash
+$ cp ./node_modules/bear-deploy/config/nginx ./deploy/nginx
 ```
 
-create Dockerfile in your root dir
+in your package.json
+```json
+{
+  "dockerRegistry": "docker.bearests.com:8443",
+  "scripts": {
+    "build": "react-scripts build",
+    "build:docker": "NODE_ENV=production yarn bear-deploy --publicUrl=/recommend --dockerfile=./node_modules/bear-deploy/config/Dockerfile"
+  }
+}
+```
+
+### Options Custom dockerfile
+```bash
+$ cp ./node_modules/bear-deploy/config/Dockerfile ./ 
+```
+
+package.json
+```json
+{
+  "dockerRegistry": "docker.bearests.com:8443",
+  "scripts": {
+    "build": "react-scripts build",
+    "build:docker": "NODE_ENV=production yarn bear-deploy --publicUrl=/recommend"
+  }
+}
+```
+
+
 
 ## License
 

@@ -1,5 +1,8 @@
 FROM node:18.3.0-alpine AS builder
 ARG PUBLIC_URL
+ARG MAX_OLD_SPACE_SIZE=8192
+ENV NODE_OPTIONS=--max-old-space-size=${MAX_OLD_SPACE_SIZE}
+
 WORKDIR /opt/app/
 COPY ../package.json yarn.lock ./
 RUN yarn install --production
