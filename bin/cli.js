@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 
 /* istanbul ignore if */
-if (process.version.match(/v(\d+)\./)[1] < 6) {
-    console.error('standard-version: Node v6 or greater is required. `standard-version` did not run.')
+if (process.version.match(/v(\d+)\./)[1] < 10) {
+    console.error('bear-script: Node v10 or greater is required. `bear-script` did not run.')
 } else {
-    const bearDeploy = require('../dist/index');
-    // bearDeploy()
-    //     .catch(() => {
-    //         process.exit(1)
-    //     })
+    const logger = require('../dist/script/logger');
+    const bearScript = require('../dist/index');
+    bearScript()
+        .catch((e) => {
+            logger.error(e.message);
+            process.exit(1);
+        });
 }

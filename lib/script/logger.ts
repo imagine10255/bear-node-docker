@@ -58,7 +58,7 @@ const enable = () => {
     disabled = false;
 };
 
-export default {
+const logger = {
     success,
     info,
     warn,
@@ -70,3 +70,7 @@ export default {
     disable,
     enable,
 };
+
+
+export default logger;
+module.exports = logger;
