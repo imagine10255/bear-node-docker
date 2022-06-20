@@ -38,26 +38,26 @@ function remarkSVGPaths(svgNode: Array<Node | string>): any{
  * @param args
  */
 async function run(args: IArgs) {
-    const sourcePath = typeof args.path !== 'undefined' ? args.path: './';
+    const basePath = typeof args.path !== 'undefined' ? args.path: './';
+    const sourceDirPath = path.join(basePath, '_sources');
     const idPrefix = typeof args.idPrefix !== 'undefined' ? args.idPrefix: 'icon';
 
-    logger.info(`svg merge symbols ${sourcePath} ...`);
+    logger.info(`svg merge symbols ${basePath} ...`);
 
     const symbol: string[] = [];
     const iconCodes: string[] = [];
 
-    const dirChildFiles = fs.readdirSync(sourcePath);
+    const dirChildFiles = fs.readdirSync(sourceDirPath);
 
-    const targetSvgFile = [sourcePath,'..', 'index.svg'].join('/');
-    const targetTypeFile = [sourcePath,'..', 'icon.d.ts'].join('/');
+    const targetSvgFile = path.join(basePath, 'index.svg');
+    const targetTypeFile = path.join(basePath, 'icon.d.ts');
 
     dirChildFiles.forEach(file => {
         if (path.extname(file) == '.svg'){
             const filename = file.replace('.svg', '');
             const iconCode = [idPrefix, filename].join('-');
 
-            const svgFile = fs.readFileSync([sourcePath, file].join('/'),
-                {encoding:'utf8', flag:'r'});
+            const svgFile = fs.readFileSync(path.join(basePath, file), {encoding:'utf8', flag:'r'});
 
             const svgContent = svgFile.toString();
             const reg = new RegExp(svgTagRule);
@@ -67,7 +67,7 @@ async function run(args: IArgs) {
                 const result = svgTag[0];
                 const svgString = parse(result);
                 const svgPaths = remarkSVGPaths(svgString.children);
-                symbol.push(`  <symbol id="${[idPrefix, filename].join('-')}" viewBox="0 0 1024 1024">\n${svgPaths.join('\n')}\n  </symbol>`);
+                symbol.push(`  <symbol id="${iconCode}" viewBox="0 0 1024 1024">\n${svgPaths.join('\n')}\n  </symbol>`);
                 iconCodes.push(`'${filename}'`);
 
                 logger.success(`${file}`);
@@ -89,7 +89,7 @@ ${symbol.join('\n\n')}\n
 
 
     // By OSX Notice
-    bash(`osascript -e 'display notification "${sourcePath} done" with title "publish done"'`);
+    bash(`osascript -e 'display notification "${basePath} done" with title "publish done"'`);
 }
 
 // run({path: './example/svg-symbols/_source'});

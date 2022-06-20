@@ -23,8 +23,8 @@ module.exports = async function bearScript () {
         .command('svg-symbols [path] [idPrefix]', 'svg merge symbols', (yargs) => {
             return yargs
                 .positional('path', {
-                    describe: 'svg source path',
-                    default: './public/static/plugins/iconsvg/_sources',
+                    describe: 'svg source path (ex: ./public/icon -> ./public/icon/_sources)',
+                    default: './public/static/plugins/iconsvg',
                 })
                 .positional('idPrefix', {
                     describe: 'id prefix name (ex: icon -> icon-arrow-right)',

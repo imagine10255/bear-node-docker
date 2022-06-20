@@ -111,10 +111,13 @@ in your package.json
 ```json
 {
   "scripts": {
-    "build:icon": "bear-script svg-symbols --path=./public/static/plugins/iconsvg/_sources"
+    "build:icon": "bear-script svg-symbols --path=./public/static/plugins/iconsvg",
+    "build:icon-from-iconfont": "bear-script svg-symbols:from-iconfont --path=./public/static/plugins/iconsvg/_sources"
   }
 }
 ```
+
+> source svg default in `_sources`
 
 ## run
 
