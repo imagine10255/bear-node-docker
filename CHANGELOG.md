@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/imagine10255/bear-react-docker/compare/v2.1.0...v2.1.1) (2022-06-20)
+
+
+### Features
+
+* modidy path ([2e52ea7](https://github.com/imagine10255/bear-react-docker/commit/2e52ea7d53c8c9254d0a696c6de4aa76b860c4f6))
+
 ## [2.1.0](https://github.com/imagine10255/bear-react-docker/compare/v2.1.0-alpha.1...v2.1.0) (2022-06-19)
 
 ## [2.1.0-alpha.1](https://github.com/imagine10255/bear-react-docker/compare/v2.1.0-alpha.0...v2.1.0-alpha.1) (2022-06-19)
