@@ -2,76 +2,76 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [2.1.0](https://github.com/imagine10255/bear-script/compare/v2.1.0-alpha.1...v2.1.0) (2022-06-19)
+## [2.1.0](https://github.com/imagine10255/bear-react-docker/compare/v2.1.0-alpha.1...v2.1.0) (2022-06-19)
 
-## [2.1.0-alpha.1](https://github.com/imagine10255/bear-script/compare/v2.1.0-alpha.0...v2.1.0-alpha.1) (2022-06-19)
-
-
-### Bug Fixes
-
-* fix args command and docs ([37d6e63](https://github.com/imagine10255/bear-script/commit/37d6e63cbf8594c1255c56918cad6ea6348841bd))
-
-## [2.1.0-alpha.0](https://github.com/imagine10255/bear-script/compare/v2.0.1...v2.1.0-alpha.0) (2022-06-19)
-
-
-### Features
-
-* add svg command ([3330860](https://github.com/imagine10255/bear-script/commit/33308603f886f0df1a16d4411055ed2e362df724))
-
-### [2.0.1](https://github.com/imagine10255/bear-script/compare/v1.1.0-alpha.1...v2.0.1) (2022-06-19)
-
-
-### Features
-
-* 新增 指令改寫 ([c5adf4f](https://github.com/imagine10255/bear-script/commit/c5adf4ffc2eb863d38a582c6ec5fa5968acf8e45))
-
-## [2.0.0](https://github.com/imagine10255/bear-script/compare/v1.1.0-alpha.1...v2.0.0) (2022-06-19)
-
-
-### Features
-
-* 新增 指令改寫 ([c5adf4f](https://github.com/imagine10255/bear-script/commit/c5adf4ffc2eb863d38a582c6ec5fa5968acf8e45))
-
-## [1.1.0-alpha.1](https://github.com/imagine10255/bear-script/compare/v1.1.0-alpha.0...v1.1.0-alpha.1) (2022-06-19)
-
-## [1.1.0-alpha.0](https://github.com/imagine10255/bear-script/compare/v1.0.4-alpha.3...v1.1.0-alpha.0) (2022-06-18)
-
-
-### Features
-
-* add args ([f719614](https://github.com/imagine10255/bear-script/commit/f71961411c09b3020b25cf76d87d00a11f09fe7e))
-
-### [1.0.4-alpha.3](https://github.com/imagine10255/bear-script/compare/v1.0.4-alpha.2...v1.0.4-alpha.3) (2022-06-18)
-
-### [1.0.4-alpha.2](https://github.com/imagine10255/bear-script/compare/v1.0.4-alpha.1...v1.0.4-alpha.2) (2022-06-18)
-
-### [1.0.4-alpha.1](https://github.com/imagine10255/bear-script/compare/v1.0.4-alpha.0...v1.0.4-alpha.1) (2022-06-18)
-
-### [1.0.4-alpha.0](https://github.com/imagine10255/bear-script/compare/v1.0.3...v1.0.4-alpha.0) (2022-06-18)
-
-### [1.0.3](https://github.com/imagine10255/bear-script/compare/v0.0.18...v1.0.3) (2022-02-18)
-
-### [1.0.2](https://github.com/imagine10255/bear-script/compare/v0.0.18...v1.0.2) (2022-02-18)
-
-### [1.0.1](https://github.com/imagine10255/bear-script/compare/v0.0.18...v1.0.1) (2022-02-18)
-
-### [0.0.18](https://github.com/imagine10255/bear-script/compare/v2.0.0...v0.0.18) (2022-02-18)
+## [2.1.0-alpha.1](https://github.com/imagine10255/bear-react-docker/compare/v2.1.0-alpha.0...v2.1.0-alpha.1) (2022-06-19)
 
 
 ### Bug Fixes
 
-* 修正 package.json script ([d1de109](https://github.com/imagine10255/bear-script/commit/d1de109775796dd0779b7561c7c491529a95a2d3))
+* fix args command and docs ([37d6e63](https://github.com/imagine10255/bear-react-docker/commit/37d6e63cbf8594c1255c56918cad6ea6348841bd))
 
-## [2.0.0](https://github.com/imagine10255/bear-script/compare/v1.0.2...v2.0.0) (2022-02-18)
+## [2.1.0-alpha.0](https://github.com/imagine10255/bear-react-docker/compare/v2.0.1...v2.1.0-alpha.0) (2022-06-19)
 
-### [1.0.2](https://github.com/imagine10255/bear-script/compare/v1.0.1...v1.0.2) (2022-02-18)
+
+### Features
+
+* add svg command ([3330860](https://github.com/imagine10255/bear-react-docker/commit/33308603f886f0df1a16d4411055ed2e362df724))
+
+### [2.0.1](https://github.com/imagine10255/bear-react-docker/compare/v1.1.0-alpha.1...v2.0.1) (2022-06-19)
+
+
+### Features
+
+* 新增 指令改寫 ([c5adf4f](https://github.com/imagine10255/bear-react-docker/commit/c5adf4ffc2eb863d38a582c6ec5fa5968acf8e45))
+
+## [2.0.0](https://github.com/imagine10255/bear-react-docker/compare/v1.1.0-alpha.1...v2.0.0) (2022-06-19)
+
+
+### Features
+
+* 新增 指令改寫 ([c5adf4f](https://github.com/imagine10255/bear-react-docker/commit/c5adf4ffc2eb863d38a582c6ec5fa5968acf8e45))
+
+## [1.1.0-alpha.1](https://github.com/imagine10255/bear-react-docker/compare/v1.1.0-alpha.0...v1.1.0-alpha.1) (2022-06-19)
+
+## [1.1.0-alpha.0](https://github.com/imagine10255/bear-react-docker/compare/v1.0.4-alpha.3...v1.1.0-alpha.0) (2022-06-18)
+
+
+### Features
+
+* add args ([f719614](https://github.com/imagine10255/bear-react-docker/commit/f71961411c09b3020b25cf76d87d00a11f09fe7e))
+
+### [1.0.4-alpha.3](https://github.com/imagine10255/bear-react-docker/compare/v1.0.4-alpha.2...v1.0.4-alpha.3) (2022-06-18)
+
+### [1.0.4-alpha.2](https://github.com/imagine10255/bear-react-docker/compare/v1.0.4-alpha.1...v1.0.4-alpha.2) (2022-06-18)
+
+### [1.0.4-alpha.1](https://github.com/imagine10255/bear-react-docker/compare/v1.0.4-alpha.0...v1.0.4-alpha.1) (2022-06-18)
+
+### [1.0.4-alpha.0](https://github.com/imagine10255/bear-react-docker/compare/v1.0.3...v1.0.4-alpha.0) (2022-06-18)
+
+### [1.0.3](https://github.com/imagine10255/bear-react-docker/compare/v0.0.18...v1.0.3) (2022-02-18)
+
+### [1.0.2](https://github.com/imagine10255/bear-react-docker/compare/v0.0.18...v1.0.2) (2022-02-18)
+
+### [1.0.1](https://github.com/imagine10255/bear-react-docker/compare/v0.0.18...v1.0.1) (2022-02-18)
+
+### [0.0.18](https://github.com/imagine10255/bear-react-docker/compare/v2.0.0...v0.0.18) (2022-02-18)
+
+
+### Bug Fixes
+
+* 修正 package.json script ([d1de109](https://github.com/imagine10255/bear-react-docker/commit/d1de109775796dd0779b7561c7c491529a95a2d3))
+
+## [2.0.0](https://github.com/imagine10255/bear-react-docker/compare/v1.0.2...v2.0.0) (2022-02-18)
+
+### [1.0.2](https://github.com/imagine10255/bear-react-docker/compare/v1.0.1...v1.0.2) (2022-02-18)
 
 ### 1.0.1 (2022-02-18)
 
 
 ### Features
 
-* 新增 發布指令 ([3b56f39](https://github.com/imagine10255/bear-script/commit/3b56f397653f17b725d5c95f522d8f8c7006fb9f))
+* 新增 發布指令 ([3b56f39](https://github.com/imagine10255/bear-react-docker/commit/3b56f397653f17b725d5c95f522d8f8c7006fb9f))
 
 ## [1.0.0](https://github.com/imagine10255/deploy/compare/v0.0.30...v1.0.0) (2022-02-17)
 

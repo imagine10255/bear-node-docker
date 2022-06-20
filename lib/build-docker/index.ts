@@ -1,7 +1,7 @@
 import * as child_process from 'child_process';
 import chalk from 'chalk';
 import ora from 'ora';
-import {bash} from '../script/utils';
+import {bash, renameDockerImage} from '../script/utils';
 import {CLIError} from '../script/cli';
 import logger from '../script/logger';
 
@@ -10,15 +10,6 @@ interface IArgs {
     dockerfile: string
 }
 
-/**
- * 重新命名 Docker Image
- * @param imageName
- * @param version
- * @param remoteAddress
- */
-function renameDockerImage(imageName: string, version: string, remoteAddress: string){
-    return `${remoteAddress}/${imageName}:${version}`;
-}
 
 function buildDockerImage(imageName: string, version: string, remoteAddress: string, publicUrl: string, dockerfile: string): Promise<string> {
 
@@ -94,16 +85,8 @@ async function run(args: IArgs) {
     // Build Image
     const targetImageName = await buildDockerImage(imageName, imageVersion, remoteAddress, publicUrl, dockerfile);
 
-    // Push Image
-    bash(`docker push ${targetImageName}`);
-    logger.success(`Successfully push to ${remoteAddress}`);
-
-    // Remove Image
-    bash(`docker rmi ${imageName} ${targetImageName}`);
-    logger.info(`remove image ${imageName}`);
-
     // By OSX Notice
-    bash(`osascript -e 'display notification "${targetImageName} done" with title "publish done"'`);
+    bash(`osascript -e 'display notification "${targetImageName} done" with title "build done"'`);
 }
 
 export default run;

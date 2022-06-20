@@ -1,4 +1,4 @@
-# bear-script docker
+# bear-react-docker docker
 
 > build docker image by reactjs
 
@@ -6,7 +6,7 @@
 ## Setting
 
 ```bash
-$ cp ./node_modules/bear-script/config/nginx ./deploy/nginx
+$ cp ./node_modules/bear-react-docker/config/nginx ./deploy/nginx
 ```
 
 in your package.json
@@ -15,14 +15,14 @@ in your package.json
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
     "build": "react-scripts build",
-    "publish": "yarn bear-script docker --publicUrl=/recommend --dockerfile=./node_modules/bear-script/config/Dockerfile"
+    "publish": "yarn bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/Dockerfile"
   }
 }
 ```
 
 ### [Options] Custom dockerfile
 ```bash
-$ cp ./node_modules/bear-script/config/Dockerfile ./ 
+$ cp ./node_modules/bear-react-docker/config/Dockerfile ./ 
 ```
 
 package.json
@@ -31,7 +31,7 @@ package.json
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
     "build": "react-scripts build",
-    "publish": "yarn bear-script docker --publicUrl=/recommend"
+    "publish": "yarn bear-react-docker docker --publicUrl=/recommend"
   }
 }
 ```

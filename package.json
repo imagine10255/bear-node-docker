@@ -1,5 +1,5 @@
 {
-  "name": "bear-script",
+  "name": "bear-react-docker",
   "version": "2.1.0",
   "description": "Common tools and methods for project development",
   "dockerRegistry": "docker.bearests.com:8443",
@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imagine10255/bear-script.git"
+    "url": "https://github.com/imagine10255/bear-react-docker.git"
   },
   "bin": "bin/cli.js",
   "files": [
