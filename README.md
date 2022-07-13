@@ -1,6 +1,6 @@
 # bear-react-docker
 
-> Common tools and methods for project development
+> Common tools and methods for react project deploy to docker
 
 [![NPM](https://img.shields.io/npm/v/bear-react-docker.svg)](https://www.npmjs.com/package/bear-react-docker)
 [![npm](https://img.shields.io/npm/dm/bear-react-docker.svg)](https://www.npmjs.com/package/bear-react-docker)
@@ -25,8 +25,8 @@ in your package.json
 {
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
-    "build": "react-scripts build",
-    "publish": "yarn bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/Dockerfile"
+    "docker:build": "bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/Dockerfile",
+    "docker:push": "bear-react-docker push && bear-react-docker remove"
   }
 }
 ```
@@ -41,8 +41,8 @@ package.json
 {
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
-    "build": "bear-react-docker build --publicUrl=/recommend",
-    "publish": "bear-react-docker push && bear-react-docker remove"
+    "docker:build": "bear-react-docker build --publicUrl=/recommend",
+    "docker:push": "bear-react-docker push && bear-react-docker remove"
   }
 }
 ```
