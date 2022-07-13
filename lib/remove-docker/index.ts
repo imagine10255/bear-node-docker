@@ -1,17 +1,14 @@
 import {bash, renameDockerImage} from '../script/utils';
 import logger from '../script/logger';
-
-interface IArgs {
-    publicUrl: string
-    dockerfile: string
-}
+import {initDefault} from '../config';
 
 
 
-async function run(args: IArgs) {
-    const imageName = process.env.npm_package_name ?? 'bear-example';
-    const imageVersion = process.env.npm_package_version ?? '0.0.0';
-    const remoteAddress = process.env.npm_package_dockerRegistry ?? 'docker.bearests.com:8443';
+
+async function run() {
+    const imageName = process.env.npm_package_name ?? initDefault.packageName;
+    const imageVersion = process.env.npm_package_version ?? initDefault.packageVersion;
+    const remoteAddress = process.env.npm_package_dockerRegistry ?? initDefault.dockerRegistry;
 
     // Build Image
     const targetImageName = renameDockerImage(imageName, imageVersion, remoteAddress);

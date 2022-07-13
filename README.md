@@ -26,7 +26,7 @@ in your package.json
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
     "docker:build": "bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/Dockerfile",
-    "docker:push": "bear-react-docker push && bear-react-docker remove"
+    "docker:push": "bear-react-docker push"
   }
 }
 ```
@@ -42,7 +42,7 @@ package.json
   "dockerRegistry": "docker.bearests.com:8443",
   "scripts": {
     "docker:build": "bear-react-docker build --publicUrl=/recommend",
-    "docker:push": "bear-react-docker push && bear-react-docker remove"
+    "docker:push": "bear-react-docker push"
   }
 }
 ```

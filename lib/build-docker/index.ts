@@ -4,10 +4,14 @@ import ora from 'ora';
 import {bash, renameDockerImage} from '../script/utils';
 import {CLIError} from '../script/cli';
 import logger from '../script/logger';
+import {initDefault} from '../config';
+import pushDocker from '../push-docker';
+
+const {Select} = require('enquirer');
 
 interface IArgs {
-    publicUrl: string
-    dockerfile: string
+    publicUrl?: string
+    dockerfile?: string
 }
 
 
@@ -73,12 +77,12 @@ function buildDockerImage(imageName: string, version: string, remoteAddress: str
 
 
 
-async function run(args: IArgs) {
-    const imageName = process.env.npm_package_name ?? 'bear-example';
-    const imageVersion = process.env.npm_package_version ?? '0.0.0';
-    const remoteAddress = process.env.npm_package_dockerRegistry ?? 'docker.bearests.com:8443';
-    const publicUrl = typeof args.publicUrl !== 'undefined' ? args.publicUrl: '';
-    const dockerfile = typeof args.dockerfile !== 'undefined' ? args.dockerfile: './';
+async function run(args?: IArgs) {
+    const imageName = process.env.npm_package_name ?? initDefault.packageName;
+    const imageVersion = process.env.npm_package_version ?? initDefault.packageVersion;
+    const remoteAddress = process.env.npm_package_dockerRegistry ?? initDefault.dockerRegistry;
+    const publicUrl = typeof args?.publicUrl !== 'undefined' ? args.publicUrl: initDefault.publicUrl;
+    const dockerfile = typeof args?.dockerfile !== 'undefined' ? args.dockerfile: initDefault.dockerfilePath;
 
     console.log(`ready release ${imageName}:${imageVersion} ...`);
 
@@ -87,6 +91,19 @@ async function run(args: IArgs) {
 
     // By OSX Notice
     bash(`osascript -e 'display notification "${targetImageName} done" with title "build done"'`);
+
+    const prompt = new Select({
+        name: 'confirmPush',
+        message: 'do you want to push it?',
+        choices: [
+            {name: 'y', message: 'Yes'},
+            {name: 'n', message: 'No'},
+        ],
+    });
+    const confirmPush = await prompt.run();
+    if(confirmPush === 'y'){
+        pushDocker();
+    }
 }
 
 export default run;
