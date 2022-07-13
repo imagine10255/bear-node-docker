@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0-alpha.0](https://github.com/imagine10255/bear-react-docker/compare/v2.1.1...v2.2.0-alpha.0) (2022-07-13)
+
+
+### Features
+
+* 新增 build 完之後以詢問方式要不要發布和刪除 ([67f0612](https://github.com/imagine10255/bear-react-docker/commit/67f0612f661636c56658c905e4f026639eebfb2f))
+
 ### [2.1.1](https://github.com/imagine10255/bear-react-docker/compare/v2.1.0...v2.1.1) (2022-06-20)
 
 
