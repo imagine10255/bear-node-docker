@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/imagine10255/bear-react-docker/compare/v2.2.0-alpha.0...v2.2.0) (2022-08-03)
+
+
+### Features
+
+* add nest dockerfile sample ([87d804f](https://github.com/imagine10255/bear-react-docker/commit/87d804fb70658aa6d0fdeeef5246c63bb1fc35ce))
+
 ## [2.2.0-alpha.0](https://github.com/imagine10255/bear-react-docker/compare/v2.1.1...v2.2.0-alpha.0) (2022-07-13)
 
 

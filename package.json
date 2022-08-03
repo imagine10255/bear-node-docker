@@ -1,6 +1,6 @@
 {
   "name": "bear-react-docker",
-  "version": "2.2.0-alpha.0",
+  "version": "2.2.0",
   "description": "Common tools and methods for project development",
   "dockerRegistry": "docker.bear.com:8443",
   "keywords": [
