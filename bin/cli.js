@@ -2,7 +2,7 @@
 
 /* istanbul ignore if */
 if (process.version.match(/v(\d+)\./)[1] < 10) {
-    console.error('bear-react-docker: Node v10 or greater is required. `bear-react-docker` did not run.')
+    console.error('bear-node-docker: Node v10 or greater is required. `bear-node-docker` did not run.')
 } else {
     const logger = require('../dist/script/logger');
     const bearScript = require('../dist/index');

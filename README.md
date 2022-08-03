@@ -1,15 +1,15 @@
-# bear-react-docker
+# bear-node-docker
 
-> Common tools and methods for react project deploy to docker
+> Common tools build docker image for node project development
 
-[![NPM](https://img.shields.io/npm/v/bear-react-docker.svg)](https://www.npmjs.com/package/bear-react-docker)
-[![npm](https://img.shields.io/npm/dm/bear-react-docker.svg)](https://www.npmjs.com/package/bear-react-docker)
+[![NPM](https://img.shields.io/npm/v/bear-node-docker.svg)](https://www.npmjs.com/package/bear-node-docker)
+[![npm](https://img.shields.io/npm/dm/bear-node-docker.svg)](https://www.npmjs.com/package/bear-node-docker)
 
 
 ## Install
 
 ```bash
-yarn add -D bear-react-docker
+yarn add -D bear-node-docker
 ```
 
 
@@ -17,7 +17,7 @@ yarn add -D bear-react-docker
 ## Setting
 
 ```bash
-$ cp ./node_modules/bear-react-docker/config/nginx ./deploy/nginx
+$ cp ./node_modules/bear-node-docker/config/nginx ./deploy/nginx
 ```
 
 in your package.json
@@ -25,8 +25,8 @@ in your package.json
 {
   "dockerRegistry": "myDockerProvider.bear.com:8443",
   "scripts": {
-    "docker:build": "bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/dockerfile/react/Dockerfile",
-    "docker:push": "bear-react-docker push"
+    "docker:build": "bear-node-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-node-docker/config/dockerfile/react/Dockerfile",
+    "docker:push": "bear-node-docker push"
   }
 }
 ```
@@ -34,10 +34,10 @@ in your package.json
 ### [Options] Custom dockerfile in root type command
 ```bash
 # react
-$ cp ./node_modules/bear-react-docker/config/dockerfile/react/Dockerfile ./
+$ cp ./node_modules/bear-node-docker/config/dockerfile/react/Dockerfile ./
 
 # nest 
-$ cp ./node_modules/bear-react-docker/config/dockerfile/nest/Dockerfile ./ 
+$ cp ./node_modules/bear-node-docker/config/dockerfile/nest/Dockerfile ./ 
 ```
 
 package.json
@@ -45,8 +45,8 @@ package.json
 {
   "dockerRegistry": "myDockerProvider.bear.com:8443",
   "scripts": {
-    "docker:build": "bear-react-docker build --publicUrl=/recommend",
-    "docker:push": "bear-react-docker push"
+    "docker:build": "bear-node-docker build --publicUrl=/recommend",
+    "docker:push": "bear-node-docker push"
   }
 }
 ```

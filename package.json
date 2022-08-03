@@ -1,18 +1,17 @@
 {
-  "name": "bear-react-docker",
+  "name": "bear-node-docker",
   "version": "2.2.0",
-  "description": "Common tools and methods for project development",
-  "dockerRegistry": "docker.bear.com:8443",
+  "description": "Common tools build docker image for node project development",
   "keywords": [
-    "typescript",
-    "javscript",
-    "utils"
+    "reactjs",
+    "nestjs",
+    "docker"
   ],
   "author": "imagine10255",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/imagine10255/bear-react-docker.git"
+    "url": "https://github.com/imagine10255/bear-node-docker.git"
   },
   "bin": "bin/cli.js",
   "files": [

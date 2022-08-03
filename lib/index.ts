@@ -12,7 +12,7 @@ module.exports = async function bearScript () {
                 })
                 .positional('dockerfile', {
                     describe: 'custom dockerfile path (ex: ./)',
-                    default: './node_modules/bear-react-docker/config/Dockerfile'
+                    default: './node_modules/bear-node-docker/config/Dockerfile'
                 });
         }, (argv) => {
             const run = require('./build-docker');
