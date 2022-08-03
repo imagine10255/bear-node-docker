@@ -25,15 +25,19 @@ in your package.json
 {
   "dockerRegistry": "myDockerProvider.bear.com:8443",
   "scripts": {
-    "docker:build": "bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/Dockerfile",
+    "docker:build": "bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/dockerfile/react/Dockerfile",
     "docker:push": "bear-react-docker push"
   }
 }
 ```
 
-### [Options] Custom dockerfile
+### [Options] Custom dockerfile in root type command
 ```bash
-$ cp ./node_modules/bear-react-docker/config/Dockerfile ./ 
+# react
+$ cp ./node_modules/bear-react-docker/config/dockerfile/react/Dockerfile ./
+
+# nest 
+$ cp ./node_modules/bear-react-docker/config/dockerfile/nest/Dockerfile ./ 
 ```
 
 package.json
