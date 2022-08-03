@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.2](https://github.com/imagine10255/bear-node-docker/compare/v2.2.1...v2.2.2) (2022-08-03)
+
+
+### Bug Fixes
+
+* fix add miss package enquirer (devDependencies move to dependencies) ([f184c16](https://github.com/imagine10255/bear-node-docker/commit/f184c16dcf5584ed57d659d9db2afed15a163bd2))
+
 ### [2.2.1](https://github.com/imagine10255/bear-node-docker/compare/v2.2.0...v2.2.1) (2022-08-03)
 
 
