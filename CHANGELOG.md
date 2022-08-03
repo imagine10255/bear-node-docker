@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/imagine10255/bear-node-docker/compare/v2.2.0...v2.2.1) (2022-08-03)
+
+
+### Features
+
+* add nest dockerfile sample ([12f1c0e](https://github.com/imagine10255/bear-node-docker/commit/12f1c0e15ea3b9ae202bfd53fc972bb9bbb81cf0))
+
 ## [2.2.0](https://github.com/imagine10255/bear-node-docker/compare/v2.2.0-alpha.0...v2.2.0) (2022-08-03)
 
 
