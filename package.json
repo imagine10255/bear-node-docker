@@ -2,7 +2,7 @@
   "name": "bear-react-docker",
   "version": "2.2.0-alpha.0",
   "description": "Common tools and methods for project development",
-  "dockerRegistry": "docker.bearests.com:8443",
+  "dockerRegistry": "docker.bear.com:8443",
   "keywords": [
     "typescript",
     "javscript",

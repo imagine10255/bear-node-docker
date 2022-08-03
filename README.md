@@ -23,7 +23,7 @@ $ cp ./node_modules/bear-react-docker/config/nginx ./deploy/nginx
 in your package.json
 ```json
 {
-  "dockerRegistry": "docker.bearests.com:8443",
+  "dockerRegistry": "myDockerProvider.bear.com:8443",
   "scripts": {
     "docker:build": "bear-react-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-react-docker/config/Dockerfile",
     "docker:push": "bear-react-docker push"
@@ -39,7 +39,7 @@ $ cp ./node_modules/bear-react-docker/config/Dockerfile ./
 package.json
 ```json
 {
-  "dockerRegistry": "docker.bearests.com:8443",
+  "dockerRegistry": "myDockerProvider.bear.com:8443",
   "scripts": {
     "docker:build": "bear-react-docker build --publicUrl=/recommend",
     "docker:push": "bear-react-docker push"

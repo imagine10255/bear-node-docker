@@ -1,12 +1,11 @@
 FROM node:18.3.0-alpine AS builder
+ARG REACT_APP_CDN_ASSETS_PATH
 ARG PUBLIC_URL
-ARG MAX_OLD_SPACE_SIZE=8192
-ENV NODE_OPTIONS=--max-old-space-size=${MAX_OLD_SPACE_SIZE}
-
 WORKDIR /opt/app/
-COPY ../package.json yarn.lock ./
-RUN yarn install --production
-COPY .. .
+COPY package.json yarn.lock ./
+RUN awk '/},/ { p = 0 } { if (!p) { print $0 } } /"devDependencies":/ { p = 1 }' package.json > package.json.tmp && mv package.json.tmp package.json && yarn install --prod --frozen-lockfile
+COPY . .
+ENV REACT_APP_CDN_ASSETS_PATH=$REACT_APP_CDN_ASSETS_PATH
 ENV PUBLIC_URL=$PUBLIC_URL
 RUN yarn build
 
