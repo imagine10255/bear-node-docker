@@ -43,10 +43,38 @@ $ cp ./node_modules/bear-node-docker/config/dockerfile/nest/Dockerfile ./
 package.json
 ```json
 {
-  "dockerRegistry": "myDockerProvider.bear.com:8443",
+  // "dockerRegistry": "myDockerProvider.bear.com:8443",
   "scripts": {
     "docker:build": "bear-node-docker build --publicUrl=/recommend",
     "docker:push": "bear-node-docker push"
+  }
+}
+```
+
+
+
+
+### [Options] Custom use docker hub pro (docker.io)
+package.json
+```json
+{
+  "dockerRegistry": "docker.io/imagine10255",
+//  "scripts": {
+//    "docker:build": "bear-node-docker build --publicUrl=/recommend",
+//    "docker:push": "bear-node-docker push"
+//  }
+}
+```
+
+
+### [Options] Custom dockerfile path
+package.json
+```json
+{
+//  "dockerRegistry": "docker.io/imagine10255",
+  "scripts": {
+    "docker:build": "bear-node-docker build --dockerfile=./Dockerfile",
+//    "docker:push": "bear-node-docker push"
   }
 }
 ```
