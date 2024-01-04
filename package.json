@@ -1,6 +1,6 @@
 {
   "name": "bear-node-docker",
-  "version": "2.2.4-alpha.0",
+  "version": "2.2.4-alpha.1",
   "description": "Common tools build docker image for node project development",
   "keywords": [
     "reactjs",
