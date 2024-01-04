@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.4-alpha.0](https://github.com/imagine10255/bear-node-docker/compare/v2.2.3...v2.2.4-alpha.0) (2024-01-04)
+
 ### [2.2.3](https://github.com/imagine10255/bear-node-docker/compare/v2.2.2...v2.2.3) (2023-11-10)
 
 ### [2.2.2](https://github.com/imagine10255/bear-node-docker/compare/v2.2.1...v2.2.2) (2022-08-03)
