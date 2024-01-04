@@ -18,7 +18,7 @@ interface IArgs {
 function buildDockerImage(imageName: string, version: string, remoteAddress: string, publicUrl: string, dockerfile: string): Promise<string> {
 
     return new Promise((resolve, reject) => {
-        const dockerBuildArgs = ['build', '--no-cache', '-t', imageName, '-f', dockerfile, '--build-arg', `PUBLIC_URL=${publicUrl}`, '.'];
+        const dockerBuildArgs = ['build', '-t', imageName, '-f', dockerfile, '--build-arg', `PUBLIC_URL=${publicUrl}`, '.'];
 
         const loader = ora();
         logger.info(
