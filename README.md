@@ -79,6 +79,12 @@ package.json
 }
 ```
 
+### Test
+
+```bash
+ts-node lib/build-docker/node-run.ts
+```
+
 
 ## License
 

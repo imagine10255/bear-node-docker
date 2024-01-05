@@ -8,7 +8,7 @@ module.exports = async function bearScript () {
             return yargs
                 .positional('publicUrl', {
                     describe: 'react-script build public url (ex: /recommend)',
-                    default: 'undefined',
+                    default: '',
                 })
                 .positional('dockerfile', {
                     describe: 'custom dockerfile path (ex: ./)',
