@@ -1,7 +1,11 @@
 import * as child_process from 'child_process';
 import chalk from 'chalk';
 import ora from 'ora';
-import {bash, renameDockerImage} from '../script/utils';
+import {
+    bash,
+    renameDockerImage,
+    isEmpty
+} from '../script/utils';
 import {CLIError} from '../script/cli';
 import logger from '../script/logger';
 import {initDefault} from '../config';
@@ -15,10 +19,14 @@ interface IArgs {
 }
 
 
-function buildDockerImage(imageName: string, version: string, remoteAddress: string, publicUrl: string, dockerfile: string): Promise<string> {
+function buildDockerImage(imageName: string, version: string, remoteAddress: string, dockerfile: string, publicUrl?: string): Promise<string> {
 
     return new Promise((resolve, reject) => {
-        const dockerBuildArgs = ['build', '-t', imageName, '-f', dockerfile, '--build-arg', `PUBLIC_URL=${publicUrl}`, '.'];
+        const options = {
+            publicUrl: isEmpty(publicUrl) ? `PUBLIC_URL=${publicUrl}`: undefined,
+        };
+        const dockerBuildArgs = ['build', '-t', imageName, '-f', dockerfile, '--build-arg', options.publicUrl, '.']
+            .filter(arg => typeof arg !== 'undefined') as string[];
 
         const loader = ora();
         logger.info(
@@ -87,7 +95,7 @@ async function run(args?: IArgs) {
     console.log(`ready release ${imageName}:${imageVersion} ...`);
 
     // Build Image
-    const targetImageName = await buildDockerImage(imageName, imageVersion, remoteAddress, publicUrl, dockerfile);
+    const targetImageName = await buildDockerImage(imageName, imageVersion, remoteAddress, dockerfile, publicUrl);
 
     // By OSX Notice
     bash(`osascript -e 'display notification "${targetImageName} done" with title "build done"'`);
