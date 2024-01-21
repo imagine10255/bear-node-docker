@@ -93,6 +93,16 @@ CMD ["nginx", "-g", "daemon off;"]
 > Be aware that `.dockerignore` should not include the build folder (the default for `create-react-app` is 'build', while for `Vite` it's 'dist').
 
 
+package.`json`
+```json
+{
+  "scripts": {
+      "build": "react-scripts build",
+      "docker:build": "yarn build && bear-node-docker build --publicUrl=/recommend  --dockerfile=./Dockerfile"
+  }
+}
+```
+
 ### Test
 
 ```bash
