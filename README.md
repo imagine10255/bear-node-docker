@@ -23,13 +23,11 @@ $ cp ./node_modules/bear-node-docker/config/nginx ./deploy/nginx
 in your package.json
 ```json
 {
-    "scripts": {
-      "dockerRegistry": "docker.io/imagine10255",
-      "scripts": {
-        "docker:build": "bear-node-docker docker --dockerfile=./node_modules/bear-node-docker/config/dockerfile/react/Dockerfile",
-        "docker:push": "bear-node-docker push"
-      }
-    }
+   "dockerRegistry": "docker.io/imagine10255",
+   "scripts": {
+     "docker:build": "bear-node-docker docker --dockerfile=./node_modules/bear-node-docker/config/dockerfile/react/Dockerfile",
+     "docker:push": "bear-node-docker push"
+   }
 }
 ```
 
