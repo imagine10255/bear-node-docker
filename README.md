@@ -79,6 +79,24 @@ package.json
 }
 ```
 
+
+### Only packaged into docker image
+
+In some old projects, npm build gets stuck when run inside Docker. In such cases, you can build locally and then only put the build path into the Docker image.
+
+```dockerfile
+# And then copy over node_modules, etc from that stage to the smaller base image
+FROM nginx:1.19-alpine
+COPY build /usr/share/nginx/html
+COPY deploy/config-nginx/nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+> Be aware that `.dockerignore` should not include the build folder (the default for `create-react-app` is 'build', while for `Vite` it's 'dist').
+
+
 ### Test
 
 ```bash

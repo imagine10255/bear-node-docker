@@ -36,11 +36,11 @@
     "release:patch": "standard-version -r patch",
     "release:alpha": "standard-version --prerelease alpha"
   },
-  "dependencies": {
-    "ora": "5.4.0",
-    "yargs": "17.5.1",
-    "svg-parser": "^2.0.4",
-    "enquirer": "^2.3.6"
+  "peerDependencies": {
+    "ora": "5.x",
+    "yargs": "17.x",
+    "svg-parser": "2.x",
+    "enquirer": "2.x"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
