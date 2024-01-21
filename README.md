@@ -23,13 +23,19 @@ $ cp ./node_modules/bear-node-docker/config/nginx ./deploy/nginx
 in your package.json
 ```json
 {
-  "dockerRegistry": "myDockerProvider.bear.com:8443",
-  "scripts": {
-    "docker:build": "bear-node-docker docker --publicUrl=/recommend --dockerfile=./node_modules/bear-node-docker/config/dockerfile/react/Dockerfile",
-    "docker:push": "bear-node-docker push"
-  }
+    "scripts": {
+      "dockerRegistry": "docker.io/imagine10255",
+      "scripts": {
+        "docker:build": "bear-node-docker docker --dockerfile=./node_modules/bear-node-docker/config/dockerfile/react/Dockerfile",
+        "docker:push": "bear-node-docker push"
+      }
+    }
 }
 ```
+
+imagine10255 is your dockerhub account
+
+
 
 ### [Options] Custom dockerfile in root type command
 ```bash
@@ -43,38 +49,30 @@ $ cp ./node_modules/bear-node-docker/config/dockerfile/nest/Dockerfile ./
 package.json
 ```json
 {
-  // "dockerRegistry": "myDockerProvider.bear.com:8443",
-  "scripts": {
-    "docker:build": "bear-node-docker build --publicUrl=/recommend",
-    "docker:push": "bear-node-docker push"
-  }
+    "scripts": {
+      "docker:build": "bear-node-docker build --dockerfile=./Dockerfile"
+    }
 }
 ```
 
 
 
 
-### [Options] Custom use docker hub pro (docker.io)
+### [Options] Custom use provider docker registry
 package.json
 ```json
 {
-  "dockerRegistry": "docker.io/imagine10255",
-//  "scripts": {
-//    "docker:build": "bear-node-docker build --publicUrl=/recommend",
-//    "docker:push": "bear-node-docker push"
-//  }
+   "dockerRegistry": "myDockerProvider.bear.com:8443"
 }
 ```
 
 
-### [Options] Custom dockerfile path
-package.json
+### [Options] Custom publicUrl
+package.`json`
 ```json
 {
-//  "dockerRegistry": "docker.io/imagine10255",
   "scripts": {
-    "docker:build": "bear-node-docker build --dockerfile=./Dockerfile",
-//    "docker:push": "bear-node-docker push"
+    "docker:build": "bear-node-docker build --publicUrl=/recommend  --dockerfile=./Dockerfile"
   }
 }
 ```
