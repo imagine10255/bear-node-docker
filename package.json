@@ -36,7 +36,7 @@
     "release:patch": "standard-version -r patch",
     "release:alpha": "standard-version --prerelease alpha"
   },
-  "peerDependencies": {
+  "dependencies": {
     "ora": "5.x",
     "yargs": "17.x",
     "svg-parser": "2.x",
